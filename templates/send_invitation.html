@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Invitation to Join</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        .content {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .button-wrapper {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+        }
+        .link {
+            word-break: break-all;
+            font-size: 13px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h2>You're Invited 🎉</h2>
+    </div>
+
+    <div class="content">
+        <p>Hello,</p>
+
+        <p>
+            <strong>{{ inviter_name or "An organization member" }}</strong>
+            has invited you to join our platform.
+        </p>
+
+        <p>
+            To get started, please click the button below to create your account and set your password.
+        </p>
+
+        <div class="button-wrapper">
+            <a href="{{ invitation_url }}" class="button">
+                Accept Invitation
+            </a>
+        </div>
+
+        <p>If the button doesn’t work, copy and paste this link into your browser:</p>
+
+        <p class="link">
+            {{ invitation_url }}
+        </p>
+
+        <p>
+            If you were not expecting this invitation, you can safely ignore this email.
+        </p>
+
+        <p>
+            Thank you,<br>
+            The Team
+        </p>
+    </div>
+
+    <div class="footer">
+        © {{ inviter_name or "Organization" }} | All rights reserved
+    </div>
+
+</div>
+
+</body>
+</html>
